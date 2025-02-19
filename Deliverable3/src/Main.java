@@ -3,25 +3,23 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        DatabaseHelper dbHelper = new DatabaseHelper();
+        MovieDAO movieDAO = new MovieDAO();
+
+        System.out.println("Welcome to the Cinema E-Booking System SQL Console");
+        System.out.println("Type 'exit' to quit.");
 
         while (true) {
-            // Prompt the user to enter an SQL command
-            System.out.println("Please enter the SQL command to execute (or type 'exit' to quit): ");
-            String sqlCommand = scanner.nextLine();
+            System.out.print("SQL> ");
+            String input = scanner.nextLine();
 
-            // If the user types 'exit', break the loop and stop the program
-            if (sqlCommand.equalsIgnoreCase("exit")) {
-                System.out.println("Exiting the program...");
+            if (input.equalsIgnoreCase("exit")) {
+                System.out.println("Exiting...");
                 break;
             }
 
-            // Otherwise, execute the SQL command
-            dbHelper.executeSqlCommand(sqlCommand);
+            DatabaseHelper.executeSqlCommand(input);
         }
 
-        scanner.close();  // Close the scanner
+        scanner.close();
     }
 }
-
-

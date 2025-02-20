@@ -11,7 +11,7 @@ public class DatabaseHelper {
 
     public static void executeSqlCommand(String sql) {
         try (Connection conn = getConnection();
-                Statement stmt = conn.createStatement()) {
+             Statement stmt = conn.createStatement()) {
 
             if (sql.trim().toUpperCase().startsWith("SELECT")) {
                 ResultSet resultSet = stmt.executeQuery(sql);

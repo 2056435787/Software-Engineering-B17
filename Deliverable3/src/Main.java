@@ -1,3 +1,4 @@
+
 import java.util.Scanner;
 
 public class Main {
@@ -16,10 +17,11 @@ public class Main {
                 System.out.println("Exiting...");
                 break;
             }
-
-            DatabaseHelper.executeSqlCommand(input);
+                // Execute other SQL commands
+                DatabaseHelper.executeSqlCommand(input);
+            }
         }
 
-        scanner.close();
+       
     }
-}
+
